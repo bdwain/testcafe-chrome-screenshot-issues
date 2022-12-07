@@ -7,15 +7,17 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "testcafe": "^2.0.0"
+    "serve": "*",
+    "testcafe": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "pree2e": "npm run build",
-    "e2e": "testcafe chrome:headless ./e2e/* -s path=./e2e-reports --app \"npx serve -s build\" --app-init-delay 4000"
+    "e2e": "testcafe chrome:headless ./e2e/* -s path=./e2e-reports --app \"npx serve -s build\" --app-init-delay 4000",
+    "e2e-head": "testcafe chrome ./e2e/* -s path=./e2e-reports --app \"npx serve -s build\" --app-init-delay 4000",
+    "e2e-firefox": "testcafe firefox:headless ./e2e/* -s path=./e2e-reports --app \"npx serve -s build\" --app-init-delay 4000"
   },
   "eslintConfig": {
     "extends": [
